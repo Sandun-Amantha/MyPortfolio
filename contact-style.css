@@ -1,0 +1,71 @@
+body {
+    background-image: url('contactbg.webp'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+/* Centering Form */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding-top: 80px;
+}   
+
+/* Glassmorphism for the Form */
+.contact-form {
+    background: rgba(255, 255, 255, 0.1); /* Transparent background */
+    backdrop-filter: blur(10px); /* Blur effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Optional border */
+    padding: 40px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px; /* Limit max width */
+    
+    
+}
+
+/* Styling Form Elements */
+.form-control {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent input fields */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+}
+
+/* Styling the Button */
+.btn-primary {
+    background-color: #12912b; /* Change button color */
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #19a931; /* Darken on hover */
+}
+
+/* Responsive Text */
+h1 {
+    color: rgb(230, 235, 237);
+    font-size: 3rem;
+    font-weight: bold;;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+#contact {
+    font-weight: 650; /* Change the font weight */
+    color: black;
+    
+}

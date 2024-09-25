@@ -1,0 +1,431 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #f1ecec;
+    
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body, html {
+    height: 100%; /* Full height for body and html */
+}
+
+.navbar {
+    z-index: 1000; /* navbar stays above other content */
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /*  shadow effect */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1); 
+}
+
+.nav-link.active {
+    font-weight: 550; 
+    
+}
+
+
+
+.profile-section {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    overflow: hidden; /* Prevent overflow during animation */
+    padding-top: 70px;
+    position: relative; /* Position for pseudo-element */
+    background: linear-gradient(to right, rgba(217, 217, 225, 0.872), rgb(255, 255, 255));
+}
+
+.profile-section::before {
+    content: "";
+    position: absolute; /* Position it behind the content */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}    
+
+.profile-info, .profile-photo {
+    position: relative; 
+   
+}
+
+
+/* Adjust padding for smaller screens */
+@media (max-width: 576px) {
+    .profile-section {
+        padding-top: 56px; /* Adjust as needed for smaller screens */
+    }
+}
+
+.profile-info {
+    text-align: center; /* Center the text */
+    margin-top: 20px; /* Space between image and description */
+    animation: slideInRight 0.9s forwards; /* Slide in from the right */
+}
+
+.profile-photo {
+    animation: slideInLeft 0.9s forwards; /* Slide in from the left */
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%); /* Start from the right */
+        opacity: 0; /* Start invisible */
+    }
+    to {
+        transform: translateX(0); /* End at original position */
+        opacity: 1; /* End visible */
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%); /* Start from the left */
+        opacity: 0; /* Start invisible */
+    }
+    to {
+        transform: translateX(0); /* End at original position */
+        opacity: 1; /* End visible */
+    }
+}
+
+.profile-info h3 {
+    font-size: 1.9rem;
+    font-weight: bold;
+    color: #f37115;
+}
+/* Adjust for smaller screens */
+@media (max-width: 576px) {
+    .profile-info h3 {
+        font-size: 1rem; /* Smaller size for small screens */
+    }
+}
+
+.profile-info h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #385287;
+    position: relative; /* Positioning for the pseudo-element */
+    display: inline-block; /* Ensure the underline affects only the text */
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 790px) {
+    .profile-info h1 {
+        font-size: 2.5rem; /* Smaller size for small screens */
+    }
+}
+
+@media (max-width: 976px) {
+    .profile-info h1 {
+        font-size: 2.8rem; /* Smaller size for small screens */
+    }
+}
+
+.profile-info h1::after {
+    content: ""; /* Pseudo-element for the underline */
+    display: block;
+    width: 0; /* Start width */
+    height: 3px; /* Thickness of the underline */
+    background: #e6813e; /* Color of the underline */
+    transition: width 0.5s; /* Transition effect */
+    position: absolute; /* Positioning */
+    left: 0; /* Align to left */
+    bottom: -5px; /* Position it below the text */
+}
+
+.profile-info h1:hover::after {
+    width: 100%; /* Full width on hover */
+}
+
+
+.profile-info p {
+    font-size: 1.5rem;
+    color: #45577b;
+}
+
+@media (max-width: 576px) {
+    .profile-info p {
+        font-size: 1.2rem; /* Smaller size for small screens */
+    }
+}
+
+.social-icons {
+    text-align: center; 
+}
+
+.social-icons a {
+    color: #5454e2;
+    margin-right: 15px;
+    font-size: 1.7rem;
+    transition: transform 0.3s; 
+}
+
+.social-icons a:active {
+    color: #5454e2;
+    margin-right: 15px;
+    font-size: 1.6rem;
+    transition: transform 0.3s; 
+}
+
+
+.profile-photo img {
+    width: 100%; 
+    height: auto; 
+    max-width: 400px; 
+    border-radius: 25px;
+}
+
+/* Media Queries */
+@media (max-width: 576px) { /* Small screens */
+    .profile-photo img {
+        max-height: 200px; /* Set a max height for small screens */
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) { /* Medium screens */
+    .profile-photo img {
+        max-height: 250px; /* Set a max height for medium screens */
+    }
+}
+
+@media (min-width: 769px) { /* Large screens */
+    .profile-photo img {
+        max-height: 350px; /* Set a max height for large screens */
+    }
+}
+
+/* Skills Section */
+.skills-section {
+    background-color: #f8f4f4;
+    padding: 50px 0;
+}
+
+.skills-section h3 {
+    margin-bottom: 40px;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.skills-section .col-md-4 {
+    margin-bottom: 30px;
+}
+
+.skills-section i {
+    color: #1c48a1;
+}
+
+
+/* Education Section */
+.education-section {
+    position: relative;
+    overflow: hidden;
+    color: #d01515;
+    height: 120vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-header {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Background sliding */
+.background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%; 
+    height: 100%;
+    z-index: -1;
+    display: flex;
+}
+
+.background {
+    width: 50%; 
+    height: 100%;
+    opacity: 0.2;
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-1 {
+    background-image: url('edubg1.webp'); 
+}
+
+.bg-2 {
+    background-image: url('edubg2.webp'); 
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+    border-left: 4px solid #e6813e; 
+}
+
+.timeline-item {
+    margin-bottom: 50px; 
+}
+
+.timeline-item h3 {
+    font-size: 1.3rem;
+    color: #3f5484;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.timeline-item p {
+    font-size: 1rem;
+    color: #413636;
+    font-weight: 500;
+}
+
+/* Right-side paragraph */
+.education-paragraph {
+    display: flex;
+    align-items: center;
+    height: 100%; 
+}
+
+.education-paragraph p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #0a0101;
+    font-weight: 500;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .section-header {
+        font-size: 2rem;
+    }
+    
+    .timeline-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .timeline-item p {
+        font-size: 0.9rem;
+    }
+    
+    .education-paragraph p {
+        font-size: 1rem;
+    }
+}
+
+/* Projects Section */
+.projects-section {
+    padding: 60px 0;
+    background-color: #f8f4f4;
+}
+
+.section-header {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.projects-description {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    color: #555;
+}
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.project-item {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.project-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.project-iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-details {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .project-iframe {
+        height: 300px;
+    }
+    
+    .section-header {
+        font-size: 2rem;
+    }
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: auto; 
+    text-align: center; 
+}
+
+.footer .divider {
+    height: 4px;
+    background-color: #eaeaf0; 
+    margin: 0 auto 15px; 
+    width: 90%; 
+}
+
+.footer p {
+    margin: 5px 0; 
+    font-size: 0.9rem;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.7rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #10c2f3;
+}
